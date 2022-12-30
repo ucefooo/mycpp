@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 00:36:00 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/27 21:07:51 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:39:31 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Bureaucrat obj("hi", 0);
+        Bureaucrat obj("hi", 1);
         Bureaucrat o("joo", 12);
         std::cout << "we are here" << o.getName() << o.getGrade() << std::endl;
         std::cout << o << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:22:12 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/24 00:09:23 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:58:28 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,18 @@ Form * Intern::makeForm(std::string FormToDo, std::string FormNameTarget)
     {
         case 0:
             tmp = new RobotomyRequestForm(FormNameTarget);
+            std::cout << "Intern creates Robotmy " << *tmp << std::endl;
             return (tmp);
         case 1:
             tmp = new ShrubberyCreationForm(FormNameTarget);
+            std::cout << "Intern creates Shrubberry " << *tmp << std::endl;
             return (tmp);
         case 2:
             tmp = new PresidentialPardonForm(FormNameTarget);
+            std::cout << "Intern creates Presidential " << *tmp << std::endl;
             return (tmp);
         default:
-            std::cout << "Please define a correct form use the words: robot, shrubberry,president." << std::endl;
+            std::cout << "Please define a correct form use the words: robot, shrubbery,president." << std::endl;
             return (0);
     }
 }

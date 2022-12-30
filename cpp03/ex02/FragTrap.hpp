@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 22:58:46 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/17 01:19:34 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:17:03 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,13 @@ class FragTrap : public ClapTrap
 {
 public:
     FragTrap(std::string name);
+    FragTrap(const FragTrap & obj);
+    FragTrap & operator = (const FragTrap & obj);
     void highFivesGuys(void);
     ~FragTrap();
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:18:02 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/17 01:18:40 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:21:00 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     ko.ShowHea();
     FragTrap po("khtak");
     po.ShowHea();
-    po.takeDamage(30);
+    po.takeDamage(1006);
     po.ShowHea();
     po.attack("ferda");
     po.ShowHea();
