@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:57:34 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/15 22:21:35 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/23 01:33:19 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     Fixed b( -511.60f );
     std::cout << Fixed::min( a, b ) << std::endl;
     //Fixed c( -12.4f );
-    //Fixed v = c / b;
+    // Fixed v = c / b;
     // std::cout << a << std::endl;
     // std::cout << --a << std::endl;
     // std::cout << a << std::endl;

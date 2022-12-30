@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:01:59 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/12 22:52:48 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/23 01:19:05 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Fixed::Fixed(const Fixed & myFix)
 Fixed & Fixed::operator= (const Fixed & myFix)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->FixedPoint = myFix.getRawBits();
+    if (this != &myFix)
+        this->FixedPoint = myFix.getRawBits();
     return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:56:58 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/16 00:10:15 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/22 03:30:30 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ public:
     static const Fixed & min(const Fixed & Fir, const Fixed & Sec);
     static Fixed & max(Fixed & Fir,Fixed & Sec);
     static const Fixed & max(const Fixed & Fir, const Fixed & Sec);
-    friend std::ostream &operator << (std::ostream &out, const Fixed & myFix);
     ~Fixed();
 };
 
+std::ostream &operator << (std::ostream &out, const Fixed & myFix);
 
 #endif

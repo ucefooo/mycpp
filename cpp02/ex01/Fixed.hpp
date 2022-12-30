@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:56:58 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/14 01:24:20 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/23 01:27:34 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ public:
     void setRawBits(int const raw);
     float toFloat( void ) const;
     int toInt( void ) const;
-    friend std::ostream &operator << (std::ostream &out, const Fixed & myFix);
     ~Fixed();
 };
 
+std::ostream &operator << (std::ostream &out, const Fixed & myFix);
 
 #endif
