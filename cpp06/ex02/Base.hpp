@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:54:10 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/26 22:15:48 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/30 03:15:22 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BASE_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class Base
 {

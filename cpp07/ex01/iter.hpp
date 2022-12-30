@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:09:38 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/30 03:02:49 by youssama         ###   ########.fr       */
+/*   Created: 2022/10/28 01:27:56 by youssama          #+#    #+#             */
+/*   Updated: 2022/10/28 01:54:55 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
 
-uintptr_t serialize(Data* ptr)
+#include <iostream>
+
+template<typename T>
+void iter(T *address, int size, void (*fu)(T*))
 {
-    uintptr_t tmp;
-    if (ptr == NULL)
-    {
-        std::cout << "Param error";
-        return (0);
-    }
-    tmp = reinterpret_cast<uintptr_t> (ptr);
-    return (tmp);
+    if (address == NULL)
+        return ;
+    int i = -1;
+    while (++i < size)
+        fu(&address[i]);
 }
 
-Data* deserialize(uintptr_t raw)
-{
-    Data *tmp;
-    if (raw == (uintptr_t)NULL)
-        return (0);
-    tmp = reinterpret_cast<Data *>(raw);
-    return (tmp);
-}
+#endif

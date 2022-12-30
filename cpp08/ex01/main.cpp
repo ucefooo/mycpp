@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:09:38 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/30 03:02:49 by youssama         ###   ########.fr       */
+/*   Created: 2022/11/01 01:50:09 by youssama          #+#    #+#             */
+/*   Updated: 2022/11/01 03:04:51 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "Span.hpp"
 
-uintptr_t serialize(Data* ptr)
+int main()
 {
-    uintptr_t tmp;
-    if (ptr == NULL)
-    {
-        std::cout << "Param error";
-        return (0);
-    }
-    tmp = reinterpret_cast<uintptr_t> (ptr);
-    return (tmp);
-}
+try{
+Span sp(100);
+std::vector<int> v;
+for(int i=0;i < 100;i++)
+    v.push_back(i);
+sp.addNumber(6);
+sp.addNumber(3);
+sp.addNumber(87);
+sp.addNumber(9);
+sp.addNumber(1);
+// sp.addNumber(v.begin(),v.end());
 
-Data* deserialize(uintptr_t raw)
-{
-    Data *tmp;
-    if (raw == (uintptr_t)NULL)
-        return (0);
-    tmp = reinterpret_cast<Data *>(raw);
-    return (tmp);
+std::cout << sp.shortestSpan() << std::endl;
+std::cout << sp.longestSpan() << std::endl;}
+catch(std::exception &e){
+    std::cout << e.what() << std::endl;}
+return 0;
 }

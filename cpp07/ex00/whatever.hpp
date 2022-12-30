@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:09:38 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/30 03:02:49 by youssama         ###   ########.fr       */
+/*   Created: 2022/10/28 00:12:48 by youssama          #+#    #+#             */
+/*   Updated: 2022/10/28 01:26:31 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-uintptr_t serialize(Data* ptr)
+#include <iostream>
+
+template<typename T>
+void swap(T & a, T & b)
 {
-    uintptr_t tmp;
-    if (ptr == NULL)
-    {
-        std::cout << "Param error";
-        return (0);
-    }
-    tmp = reinterpret_cast<uintptr_t> (ptr);
-    return (tmp);
+    T c = a;
+    a = b;
+    b = c;
 }
 
-Data* deserialize(uintptr_t raw)
+template<typename T>
+T min(T a, T b)
 {
-    Data *tmp;
-    if (raw == (uintptr_t)NULL)
-        return (0);
-    tmp = reinterpret_cast<Data *>(raw);
-    return (tmp);
+    if (a < b)
+        return (a);
+    return (b);
 }
+
+template<typename T>
+T max(T a, T b)
+{
+    if (a > b)
+        return (a);
+    return (b);
+}
+
+#endif

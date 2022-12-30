@@ -5,21 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:09:53 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/30 03:03:13 by youssama         ###   ########.fr       */
+/*   Created: 2022/10/28 00:37:06 by youssama          #+#    #+#             */
+/*   Updated: 2022/10/28 01:26:47 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "whatever.hpp"
 
 int main()
 {
-    Data t;
-    uintptr_t ptr;
-    t.age = 10;
-    t.name = "hi";
-    ptr = serialize(&t);
-    Data *g = deserialize(ptr);
-    if (g)
-        std::cout << g->age << " and " << g->name << std::endl;
+    int a = 2;
+    int b = 3;
+    ::swap(a,b);
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+return 0;
 }

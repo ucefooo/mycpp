@@ -6,7 +6,7 @@
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:50:34 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/26 23:24:50 by youssama         ###   ########.fr       */
+/*   Updated: 2022/10/30 03:01:23 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 float CharToFloat(char *v)
 {
-    float out = (float)std::strtod(v,NULL);
+    float out = static_cast<float>(std::strtod(v,NULL));
     return (out);
 }
 
@@ -26,8 +26,7 @@ double CharToDouble(char *v)
 
 int CharToInt(char *v)
 {
-    std::string c = v;
-    int out = std::stoi(c,0);
+    int out = std::atoi(v);
     return (out);
 }
 
@@ -78,7 +77,7 @@ int CheckParam(std::string Check)
 
 int main(int c, char **v)
 {
-    if (c > 3 || c < 2)
+    if (c!=2)
     {
         std::cout << "Please enter Arg" << std::endl;
         return (1);
@@ -93,16 +92,16 @@ int main(int c, char **v)
     {
     case 1:
         int c;
-        c = (int)v[1][0];
+        c = static_cast<int>(v[1][0]);
         if (c >= 0 && c <= 31)
             std::cout << "char: Non displayable" << std::endl;
         else if (c < 0 || c > 126)
             std::cout << "char: impossible" << std::endl;
         else
-            std::cout << "char: \'" << (char)c << "\'" << std::endl;
+            std::cout << "char: \'" << static_cast<char>(c) << "\'" << std::endl;
         std::cout << "int: " << c << std::endl;
-        std::cout << "float: " << (float)c << ".0f" << std::endl;
-        std::cout << "double: " << (double)c << ".0" << std::endl;
+        std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
         break;
     case 2:
         c = CharToInt(v[1]);
@@ -111,33 +110,33 @@ int main(int c, char **v)
         else if (c < 0 || c > 126)
             std::cout << "char: impossible" << std::endl;
         else
-            std::cout << "char: \'" << (char)c << "\'" << std::endl;
+            std::cout << "char: \'" << static_cast<char>(c) << "\'" << std::endl;
         std::cout << "int: " << c << std::endl;
-        std::cout << "float: " << (float)c << ".0f" << std::endl;
-        std::cout << "double: " << (double)c << ".0" << std::endl;
+        std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
         break;
     case 3:
         float f;
         f  = CharToFloat(v[1]);
-        c = (int)f;
+        c = static_cast<int>(f);
         if (c >= 0 && c <= 31)
             std::cout << "char: Non displayable" << std::endl;
         else if (c < 0 || c > 126)
             std::cout << "char: impossible" << std::endl;
         else
-            std::cout << "char: \'" << (char)c << "\'" << std::endl;
+            std::cout << "char: \'" << static_cast<char>(c) << "\'" << std::endl;
         if (!isnan(f))
         {
-            std::cout << "int: " << (int)f << std::endl;
+            std::cout << "int: " << static_cast<int>(f) << std::endl;
             if (roundf(f) == f && cd != "inff" && cd != "-inff" && cd != "+inff" && cd != "inf" && cd != "-inf" && cd != "+inf")
             {
                 std::cout << "float: " << f << ".0f" << std::endl;
-                std::cout << "double: " << (double)f << ".0" << std::endl;
+                std::cout << "double: " << static_cast<double>(f) << ".0" << std::endl;
             }
             else
             {
                 std::cout << "float: " << f << "f" << std::endl;
-                std::cout << "double: " << (double)f << std::endl;
+                std::cout << "double: " << static_cast<double>(f) << std::endl;
             }
             
         }
@@ -145,30 +144,30 @@ int main(int c, char **v)
         {
             std::cout << "int: impossible" << std::endl;
             std::cout << "float: " << f << "f" << std::endl;
-            std::cout << "double: " << (double)f << std::endl;
+            std::cout << "double: " << static_cast<double>(f) << std::endl;
         }
         break;
     case 4:
         double d;
         d  = CharToDouble(v[1]);
-        c = (int)d;
+        c = static_cast<int>(d);
         if (c >= 0 && c <= 31)
             std::cout << "char: Non displayable" << std::endl;
         else if (c < 0 || c > 126)
             std::cout << "char: impossible" << std::endl;
         else
-            std::cout << "char: \'" << (char)c << "\'" << std::endl;
+            std::cout << "char: \'" << static_cast<char>(c) << "\'" << std::endl;
         if (!isnan(d))
         {
-            std::cout << "int: " <<(int)d << std::endl;
+            std::cout << "int: " <<static_cast<int>(d) << std::endl;
             if (roundf(d) == d)
             {
-                std::cout << "float: " << (float)d << ".0f" << std::endl;
+                std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
                 std::cout << "double: " << d << ".0" << std::endl;
             }
             else
             {
-                std::cout << "float: " << (float)d << "f" << std::endl;
+                std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
                 std::cout << "double: " << d << std::endl;
             }
             
@@ -176,7 +175,7 @@ int main(int c, char **v)
         else
         {
             std::cout << "int: impossible" << std::endl;
-            std::cout << "float: " << (float)d << "f" << std::endl;
+            std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
             std::cout << "double: " << d << std::endl;
         }
         break;

@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssama <youssama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:09:38 by youssama          #+#    #+#             */
-/*   Updated: 2022/10/30 03:02:49 by youssama         ###   ########.fr       */
+/*   Created: 2022/10/31 23:21:54 by youssama          #+#    #+#             */
+/*   Updated: 2022/11/01 01:25:15 by youssama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
-uintptr_t serialize(Data* ptr)
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+template<typename T>
+int easyfind(T vec,int N)
 {
-    uintptr_t tmp;
-    if (ptr == NULL)
-    {
-        std::cout << "Param error";
-        return (0);
-    }
-    tmp = reinterpret_cast<uintptr_t> (ptr);
-    return (tmp);
+    typename T::iterator i = std::find(vec.begin(),vec.end(),N);
+    if (i == vec.end())
+        throw std::out_of_range("Throw::Didnt find it");
+    return N;
 }
 
-Data* deserialize(uintptr_t raw)
-{
-    Data *tmp;
-    if (raw == (uintptr_t)NULL)
-        return (0);
-    tmp = reinterpret_cast<Data *>(raw);
-    return (tmp);
-}
+#endif
